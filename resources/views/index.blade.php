@@ -115,24 +115,24 @@
     <div class="image" data-img-url="{{asset('img/slider/1.jpg')}}"></div>
     </div>
     <div class="details">
-        <h3 class="name">{{$settings['name-admin']}}</h3>
-        <p class="job">{{ $settings['content-demo'] }}</p>
+        <h3 class="name">{{$settings['name-admin'][0]}}</h3>
+        <p class="job">{{ $settings['content-demo'][0] }}</p>
     <div class="social">
         <ul>
-            @if (!is_null($settings['facebook']))   
-                <li><a href="{{ $settings['facebook'] }}"><img class="svg" src="{{asset('img/svg/social/facebook.svg')}}" alt="" /></a></li>
+            @if (!is_null($settings['facebook'][0]))   
+                <li><a href="{{ $settings['facebook'][0] }}"><img class="svg" src="{{asset('img/svg/social/facebook.svg')}}" alt="" /></a></li>
             @endif
-            @if (!is_null($settings['twitter']))
-                <li><a href="{{ $settings['twitter'] }}"><img class="svg" src="{{asset('img/svg/social/twitter.svg')}}" alt="" /></a></li>
+            @if (!is_null($settings['twitter'][0]))
+                <li><a href="{{ $settings['twitter'][0] }}"><img class="svg" src="{{asset('img/svg/social/twitter.svg')}}" alt="" /></a></li>
             @endif
             @if (!is_null($settings['instagram']))
-                <li><a href="{{ $settings['instagram'] }}"><img class="svg" src="{{asset('img/svg/social/instagram.svg')}}" alt="" /></a></li>
+                <li><a href="{{ $settings['instagram'][0] }}"><img class="svg" src="{{asset('img/svg/social/instagram.svg')}}" alt="" /></a></li>
             @endif
             @if (!is_null($settings['dribbble']))
-                <li><a href="{{ $settings['dribbble'] }}"><img class="svg" src="{{asset('img/svg/social/dribbble.svg')}}" alt="" /></a></li>
+                <li><a href="{{ $settings['dribbble'][0] }}"><img class="svg" src="{{asset('img/svg/social/dribbble.svg')}}" alt="" /></a></li>
             @endif
             @if (!is_null($settings['tik-tok']))
-                <li><a href="{{ $settings['tik-tok'] }}"><img class="svg" src="{{asset('img/svg/social/tik-tok.svg')}}" alt="" /></a></li>
+                <li><a href="{{ $settings['tik-tok'][0] }}"><img class="svg" src="{{asset('img/svg/social/tik-tok.svg')}}" alt="" /></a></li>
             @endif
         </ul>
     </div>
@@ -151,10 +151,10 @@
     <div class="main" data-img-url="{{asset('img/slider/1.jpg')}}"></div>
     </div>
     <div class="description">
-    <h3 class="name">{{ $settings['adriano-smith-photographer'] }}</h3>
+    <h3 class="name">{{ $settings['adriano-smith-photographer'][0] }}</h3>
     <div class="description_inner">
     <div class="left">
-    <p>{{$settings['content-about']}}</p>
+    <p>{{$settings['content-about'][0]}}</p>
     <div class="tokyo_tm_button">
     <a href="#">Learn More</a>
     </div>
@@ -239,7 +239,6 @@
                                     </div>
                                     <div class="my_like">
                                         <a href="#">
-                                            {{-- <img class="svg" src="{{asset('img/svg/like.svg')}}" alt="" /> --}}
                                             <span>{{$blog->view}} view</span>
                                         </a>
                                     </div>
@@ -281,35 +280,35 @@
                 <div class="tokyo_tm_title">
                     <div class="title_flex">
                         <div class="left">
-                            <span>Contact</span>
+                            <span>Liên hệ</span>
                             <h3>Get in Touch</h3>
                         </div>
                     </div>
                 </div>
                 <div class="fields">
-                    <form method="post" class="contact_form" id="contact_form" autocomplete="off">
+                    <form method="post" action="{{route('Contact')}}" class="contact_form">
                         @csrf
                         <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
                         <div class="empty_notice">
                             <span>Vui lòng điền thông tin đầy đủ.</span>
                         </div>
+                        @include('error')
                         <div class="first">
                             <ul>
                                 <li>
-                                    <input id="name" type="text" placeholder="Name">
+                                    <input name="name"  type="text" placeholder="Name" value="{{ old('name') }}">
                                 </li>
                                 <li>
-                                    <input id="email" type="text" placeholder="Email hoặc số điện thoại...">
+                                    <input name="information" type="text" value="{{old('information')}}" placeholder="Email hoặc số điện thoại...">
                                 </li>
                             </ul>
                         </div>
                         <div class="last">
-                            <textarea id="message" placeholder="Nội dung"></textarea>
+                            <textarea  placeholder="Nội dung" name="content">{{old('content')}}</textarea>
                         </div>
                         <div class="tokyo_tm_button" data-position="left">
-                            <a id="send_message" type="submit">
-                                <span>Contact</span>
-                            </a>
+                            <input value="Contact" type="submit">
+                                {{-- <span>Contact</span> --}}
                         </div>
                     </form>
                 </div>

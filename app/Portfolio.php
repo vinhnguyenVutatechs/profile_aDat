@@ -8,6 +8,7 @@ class Portfolio extends Model
 {
     protected $table = 'categories_portfolio';
     protected $fillable = ['slug', 'name'];
+    public $timestamps = false;
 
     /**
      * Get all of the comments for the Portfolio
