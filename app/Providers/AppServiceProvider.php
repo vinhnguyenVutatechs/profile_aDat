@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $settings = get_settings(['avata', 'content-demo', 'name-admin', 'facebook', 'twitter', 'instagram',
-        'dribbble', 'tik-tok', 'adriano-smith-photographer', 'content-about', 'count_view_web']);
+        'dribbble', 'tik-tok', 'adriano-smith-photographer', 'content-about', 'count_view_web', 'faicon']);
         $alert_new = DB::table('contact')->where('status', 0)->orderBy('created_at', 'DESC')->limit(10)->get();
         $contact = DB::table('contact')->orderBy('created_at', 'DESC')->paginate(10);
         View::share('contact', $contact);

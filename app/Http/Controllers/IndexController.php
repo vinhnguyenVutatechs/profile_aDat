@@ -9,7 +9,7 @@ use App\Categories;
 use App\Profile;
 use App\Skill;
 use App\Personal;
-use App\funfacts;
+use App\FunFacts;
 use App\Portfolio;
 use App\Portfolios;
 use App\Users;
@@ -24,7 +24,7 @@ class IndexController extends Controller
         $profile = Profile::limit(10)->pluck('value_name', 'key_name')->toArray();
         $skill = Skill::pluck('value_name', 'key_name')->toArray();
         $personal = Personal::all();
-        $funfacts = funfacts::pluck('key', 'value')->toArray();
+        $funfacts = FunFacts::pluck('key', 'value')->toArray();
         $categories_portfolio = Portfolio::all();
         $portdolio = Portfolios::with('CategoriesPortfolio')->get();
         $blogs = Blog::with('Users')->orderBy('updated_at', 'DESC')->paginate(6);

@@ -198,12 +198,6 @@
                                   <button type="submit" class="btn-md btn-theme btn-block">Login</button>
                               </div>
                           </form>
-                          {{-- <form action="{{route('Dangky')}}" method="post">
-                            @csrf
-                            <input type="text" name="email">
-                            <input type="password" name="pass">
-                            <input type="submit">
-                          </form> --}}
                       </div>
                   </div>
               </div>

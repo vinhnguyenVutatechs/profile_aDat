@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="admin-themes-lab">
     <meta name="author" content="themes-lab">
-    <link rel="shortcut icon" href="{{asset('admins/assets/global/images/favicon.png')}}" type="image/png">
+    <link rel="shortcut icon" href="{{asset('public/admins/assets/global/images/favicon.png')}}" type="image/png">
     <title>Phạm Tiến Đạt | Dịch vụ Facebook</title>
-    <link href="{{asset('admins/assets/global/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('admins/assets/global/css/theme.css')}}" rel="stylesheet">
-    <link href="{{asset('admins/assets/global/css/ui.css')}}" rel="stylesheet">
-    <link href="{{asset('admins/assets/admin/layout1/css/layout.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admins/assets/global/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admins/assets/global/css/theme.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admins/assets/global/css/ui.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admins/assets/admin/layout1/css/layout.css')}}" rel="stylesheet">
     <!-- BEGIN PAGE STYLE -->
-    <link href="{{asset('admins/assets/global/plugins/metrojs/metrojs.min.css')}}" rel="stylesheet">
-    <link href="{{asset('admins/assets/global/plugins/maps-amcharts/ammap/ammap.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admins/assets/global/plugins/metrojs/metrojs.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/admins/assets/global/plugins/maps-amcharts/ammap/ammap.css')}}" rel="stylesheet">
     <!-- END PAGE STYLE -->
-    <script src="{{asset('admins/assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
+    <script src="{{asset('public/admins/assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js')}}"></script>
 </head>
 
 <body class="fixed-topbar fixed-sidebar theme-sdtl color-default dashboard">
@@ -27,7 +27,7 @@
     <div class="sidebar">
         <div class="logopanel">
         <h1>
-            <a href="/admin"></a>
+            <a href="dashboard.html"></a>
         </h1>
         </div>
         <div class="sidebar-inner">
@@ -81,13 +81,6 @@
                 </ul>
             </li>
 
-            <li class=" nav-active active">
-                <a href="{{route('profile')}}">
-                    <i class="icon-user"></i>
-                    <span>Thông tin cá nhân</span>
-                </a>
-            </li>
-
             <li class="">
                 <a href="{{route('Categories')}}">
                     <i class="icon-home"></i>
@@ -97,7 +90,7 @@
 
              <li class="">
                 <a href="#">
-                    <i class="icon-cup"></i>
+                    <i class="icon-home"></i>
                     <span>Quản lý Blog</span>
                 </a>
             </li>

@@ -2,11 +2,47 @@
     <!DOCTYPE html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Name of your web site">
+    <meta name="description" content="{{$settings['name-admin'][0]}} Dịch vụ Facebook | Admin Cộng đồng like}}">
     <meta name="author" content="Marketify">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Phạm Tiến Đạt</title>
-
+    <title>{{$settings['name-admin'][0]}}</title>
+    <meta name='Title' content="{{$settings['name-admin'][0]}} | Dịch Vụ Facebook">
+    <meta name='Keywords' content="{{$settings['name-admin'][0]}}, Dịch vụ facebook">
+    <meta name='Copyright' content="{{$settings['name-admin'][0]}}">
+    <meta name='Classification' content="Personal">
+    <meta name='Rating' content="General">
+    <meta name='Revisit-After' content="7 Days">
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv='Content-Type' content="text/html; charset=utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:image:width" content="490px" />
+    <meta property="og:image:height" content="292px" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="tiendatmedia.com" />
+    <meta name="geo.placename" content="Viet Nam" />
+    <meta name="geo.region" content="vn" />
+    <meta name="DC.Language" content="vn" >
+    <link rel="alternate" href="{{ url('/') }}" hreflang="vn">
+    <meta name="robots" content="noodp,index,follow">
+    <meta property="fb:app_id" content="">
+    <meta name="alexaVerifyID" content="">
+    <link rel="shortcut icon" href="{{ asset($settings['faicon'][0]) }}" type="image/x-icon" />
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type"   : "Organization",
+            "url"     : "{{ url('/') }}",
+            "logo"    : "{{ asset($settings['faicon'][0]) }}",
+            "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "{{ $settings['faicon'][0] }}",
+                "contactType": "customer service"
+            }
+            ]
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/plugins.css')}}" />
@@ -19,7 +55,32 @@
     <div id="preloader">
         <div class="loader_line"></div>
     </div>
+<!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
 
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "1527803460772775");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v11.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <div class="tokyo_tm_all_wrap" data-magic-cursor="" data-color="white"> 
     <div class="tokyo_tm_modalbox_news">
@@ -322,7 +383,8 @@
     </div>
 
 
-    <script data-cfasync="false" src="{{asset('js/email-decode.min.js')}}"></script><script src="{{asset('js/jquery.js')}}"></script>
+    <script data-cfasync="false" src="{{asset('js/email-decode.min.js')}}">
+    </script><script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/plugins.js')}}"></script>
     <script src="{{asset('js/init.js')}}"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&amp;callback=initMap"></script>
